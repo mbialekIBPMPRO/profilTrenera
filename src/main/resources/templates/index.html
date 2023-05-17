@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul li {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<h1>Hello world</h1>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+        <th th:each="collN : ${collName}" th:text="${collN}" />
+    </tr>
+    <tr th:each="player : ${players}">
+    <td th:text="${player.id}"/>
+    <td th:text="${player.fname}"/>
+    <td th:text="${player.lname}"/>
+    </tr>
+</table>
+<br>
+<form action="./addOne" method="post">
+    <label>Imię:</label><br>
+    <input type="text" name="fname"><br>
+    <label>Nazwisko:</label><br>
+    <input type="text" name="lname"><br>
+    <label>Obecny:</label><br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

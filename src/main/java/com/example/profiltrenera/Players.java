@@ -15,9 +15,8 @@ public class Players {
     private String fname;
     private String lname;
 
-    @ManyToOne
-    @JoinColumn(name = "januaryId")
-    private January january;
+    public Players() {
+    }
 
     public Players(String fname, String lname) {
         this.fname = fname;
